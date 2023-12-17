@@ -11,6 +11,7 @@ vim.keymap.set("n", "<leader>dr", "<cmd>lua require('dap').repl.open()<CR>")
 vim.keymap.set("n", "<F5>", "<cmd>lua require('dap').continue()<CR>")
 vim.keymap.set("n", "<F6>", "<cmd>lua require('dap').step_over()<CR>")
 vim.keymap.set("n", "<F7>", "<cmd>lua require('dap').step_into()<CR>")
+vim.keymap.set("n", "<F8>", "<cmd>lua require('dap').step_out()<CR>")
 
 -- nvim-dap-ui
 vim.keymap.set("n", "<leader>du", "<cmd>lua require('dapui').toggle()<CR>")
@@ -25,3 +26,4 @@ vim.keymap.set("n", "<leader>df", "<cmd>lua require('dap-python').test_function(
 -- change icon of debug line
 vim.fn.sign_define('DapBreakpoint', {text='🎁', texthl='', linehl='', numhl=''})
 vim.fn.sign_define('DapStopped', {text='🎅', texthl='', linehl='', numhl=''})
+
