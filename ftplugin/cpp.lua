@@ -6,5 +6,5 @@ vim.keymap.set('n', '<leader>ma', 'oint main () {\n\t\n\treturn 0;\n}', { norema
 
 -- compile current file using g++ with --debug flag
 
-vim.keymap.set('n', '<leader>bd', ':!g++ --debug %', { noremap = true })
+vim.keymap.set('n', '<leader>md', ':!g++ --debug %<CR><CR>', { noremap = true })
 
