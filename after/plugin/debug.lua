@@ -27,3 +27,28 @@ vim.keymap.set("n", "<leader>df", "<cmd>lua require('dap-python').test_function(
 vim.fn.sign_define('DapBreakpoint', {text='🎁', texthl='', linehl='', numhl=''})
 vim.fn.sign_define('DapStopped', {text='🎅', texthl='', linehl='', numhl=''})
 
+-- c++ debugger
+local dap = require('dap')
+dap.adapters.cppdbg = {
+  id = 'cppdbg',
+  type = 'executable',
+  command = '/home/henrik/.local/share/nvim/mason/packages/cpptools/extension/debugAdapters/bin/OpenDebugAD7',
+  options = {
+      detached = false
+    },
+}
+
+dap.configurations.cpp = {
+  {
+    name = "Launch",
+    type = "cppdbg",
+    request = "launch",
+    cwd = '${workspaceFolder}',
+    stopAtEntry = true,
+    TargetArchitecture = "x64",
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    runInTerminal = false,
+  },
+}

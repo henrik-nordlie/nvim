@@ -32,3 +32,4 @@ vim.opt.colorcolumn = "80"
 
 vim.opt.conceallevel =2
 
+vim.opt.filetype = "on"
