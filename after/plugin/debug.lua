@@ -24,8 +24,8 @@ vim.keymap.set("n", "<leader>dm", "<cmd>lua require('dap-python').test_method()<
 vim.keymap.set("n", "<leader>df", "<cmd>lua require('dap-python').test_function()<CR>")
 
 -- change icon of debug line
-vim.fn.sign_define('DapBreakpoint', {text='🎁', texthl='', linehl='', numhl=''})
-vim.fn.sign_define('DapStopped', {text='🎅', texthl='', linehl='', numhl=''})
+vim.fn.sign_define('DapBreakpoint', {text='📍', texthl='', linehl='', numhl=''})
+vim.fn.sign_define('DapStopped', {text='👉', texthl='', linehl='', numhl=''})
 
 -- c++ debugger
 local dap = require('dap')
@@ -45,7 +45,6 @@ dap.configurations.cpp = {
     request = "launch",
     cwd = '${workspaceFolder}',
     stopAtEntry = true,
-    TargetArchitecture = "x64",
     program = function()
       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
     end,
